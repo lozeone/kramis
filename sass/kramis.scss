@@ -51,6 +51,9 @@ h1,
   font-weight: bold;
   line-height: 1.875em;
 }
+.block-system-main-block{
+  padding-top: 2em;
+}
 .content-header {
   overflow: hidden;
   padding: 24px 0 0;
@@ -174,9 +177,7 @@ table{
   }
 }
 
-.block-system-main-block{
-  padding-top: 2em;
-}
+
 a.tabledrag-handle .handle {
     width: 25px;
     height: 25px;
@@ -188,22 +189,7 @@ a.tabledrag-handle .handle {
     margin-left: 0
 }
 
-/* .group-left{
-  float: left;
-  width: 50%;
-  padding-right: 2em;
-}
-.group-right{
-  float: right;
-  width: 50%;
-  padding-left: 2em;
-}
-.group-inline-wrapper{
-  clear: both;
-  width: 100%;
-  float: left;
-  padding-bottom: 2em;
-} */
+
 
 @media (min-width: $desktop) {
   .group-left{
