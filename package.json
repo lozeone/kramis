@@ -1,0 +1,34 @@
+{
+  "name": "kramis",
+  "version": "1.0.0",
+  "description": "Drupal 8 admin theme (sub theme of Seven) loosely based on lightship.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ILG",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-drupal-bundle": "^1.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp4-run-sequence": "^1.0.1",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "ajv": "^5.5.2"
+  },
+  "engines": {
+    "node": "11.10.0"
+  }
+}
