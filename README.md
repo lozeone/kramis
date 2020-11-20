@@ -10,6 +10,8 @@ Its basicaly just what I feel are some css improvements and a few alter hook imp
 
 To complie the css you need Gulp.
 
+running npm install should install all the needed node modules
+
 #Setting Up Gulp
 --------
 
