@@ -1,29 +1,38 @@
-.tabs__link.is-active{
-  color: $bright-blue;
+
+.vertical-tabs {
+  margin: 3em 0;
+  overflow: hidden;
 }
-.tabs{
-  font-family: $header-family;
+.vertical-tabs__menu{
+  border-top: none;
 }
-.local-actions{
-  //text-align: right;
-  border-bottom: solid 1px $lighter-gray;
-  padding: 0 0 1em 0;
-  margin-bottom: 1em;
+.vertical-tabs__menu-item{
+  border: none;
+}
+.vertical-tabs__menu-item.is-selected {
+    z-index: 1;
+    overflow-x: visible;
+    width: auto;
+    border-right: none;
+    margin-right: -1px;
+}
+.vertical-tabs__panes {
+  padding: 2em 1.5em;
 }
 
-@media screen and (min-width: 48em){
-  .is-horizontal .tabs__link.is-active::before {
-    border-color: $bright-blue;
+.horizontal-tabs{
+  margin: 5em 0;
+  //overflow: hidden;
+  border-top: none;
+  .horizontal-tabs-list{
+    background-color: transparent;
+    font-size: 1.2em;
   }
-  .is-horizontal .tabs__link:focus,
-  .is-horizontal .tabs__link{
-    padding-left: 2em;
-    padding-right: 2em;
-  }
-
-  .is-horizontal .tabs__tab{
-    font-size: 13px;
+  .horizontal-tab-button{
+    //border-radius: 5px 5px 0 0;
+    //overflow: hidden;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin: 0 0 -1px -1px;
   }
 }
-
-

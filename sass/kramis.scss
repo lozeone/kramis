@@ -23,7 +23,7 @@
 @import "styles/dropbuttons";
 //@import "styles/form";
 //@import "styles/tables";
-//@import "styles/tabs";
+@import "styles/tabs";
 //@import "styles/throbbers";
 //@import "styles/comments";
 
@@ -422,43 +422,6 @@ a.tabledrag-handle .handle {
 
 
 
-.vertical-tabs {
-  margin: 3em 0;
-  overflow: hidden;
-}
-.vertical-tabs__menu{
-  border-top: none;
-}
-.vertical-tabs__menu-item{
-  border: none;
-}
-.vertical-tabs__menu-item.is-selected {
-    z-index: 1;
-    overflow-x: visible;
-    width: auto;
-    border-right: none;
-    margin-right: -1px;
-}
-.vertical-tabs__panes {
-  padding: 2em 1.5em;
-}
-
-.horizontal-tabs{
-  margin: 5em 0;
-  //overflow: hidden;
-  border-top: none;
-  .horizontal-tabs-list{
-    background-color: transparent;
-    font-size: 1.2em;
-  }
-  .horizontal-tab-button{
-    //border-radius: 5px 5px 0 0;
-    //overflow: hidden;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    margin: 0 0 -1px -1px;
-  }
-}
 
 
 // ##############################################
@@ -466,14 +429,14 @@ a.tabledrag-handle .handle {
 // override the above styles
 // ##############################################
 @media (min-width: $tablet) {
-  //@import "responsive/tablet";
+  @import "responsive/tablet";
 }
 @media (min-width: $tablet-plus) {
-  //@import "responsive/tablet_plus";
+  @import "responsive/tablet_plus";
 }
 @media (min-width: $desktop) {
-  //@import "responsive/desktop";
+  @import "responsive/desktop";
 }
 @media (min-width: $desktop_plus) {
-  //@import "responsive/desktop_plus";
+  @import "responsive/desktop_plus";
 }
