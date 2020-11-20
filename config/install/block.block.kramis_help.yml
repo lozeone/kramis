@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - help
+  theme:
+    - kramis
+id: kramis_help
+theme: kramis
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+    context_mapping: {  }

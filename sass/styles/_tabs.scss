@@ -1,0 +1,29 @@
+.tabs__link.is-active{
+  color: $bright-blue;
+}
+.tabs{
+  font-family: $header-family;
+}
+.local-actions{
+  //text-align: right;
+  border-bottom: solid 1px $lighter-gray;
+  padding: 0 0 1em 0;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 48em){
+  .is-horizontal .tabs__link.is-active::before {
+    border-color: $bright-blue;
+  }
+  .is-horizontal .tabs__link:focus,
+  .is-horizontal .tabs__link{
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .is-horizontal .tabs__tab{
+    font-size: 13px;
+  }
+}
+
+

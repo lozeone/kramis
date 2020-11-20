@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+  theme:
+    - kramis
+id: kramis_secondary_tabs
+theme: kramis
+region: pre_content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary Tabs'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+    context_mapping: {  }

@@ -1,0 +1,73 @@
+// ##############################################
+// drop buttons
+
+.js .dropbutton-multiple .dropbutton-widget{
+  border-radius: 5px !important;
+  overflow: hidden;
+  /* background-image: none !important;
+  a{
+    background-image: none !important;
+    background-color: #fff;
+  } */
+}
+.js .dropbutton-wrapper .dropbutton-widget:hover{
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+   border-radius: 5px !important;
+  //border-color: $bright-blue;
+}
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
+  border-radius: 0 5px 5px 0; /* LTR */
+  &:hover{
+    background: #fff;
+  }
+}
+[dir="rtl"].js .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
+  border-radius: 5px 0 0 5px;
+}
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action a,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action input,
+.js .dropbutton-wrapper .dropbutton-widget .dropbutton-action button {
+  padding: 0.4em 1em;
+  border-radius: inherit; /* LTR */
+  text-shadow: none !important;
+  &:hover{
+    background-image: none !important;
+    background: #fff;
+    color: $bright-blue;
+  }
+  &:focus{
+    background-image: none !important;
+    background: #fff;
+    color: $bright-blue;
+    text-decoration: none;
+    border-radius: inherit !important;
+  }
+  &:active{
+    background-image: none !important;
+    background: #fff;
+    color: $bright-blue;
+    text-decoration: none;
+    border-radius: inherit !important;
+  }
+}
+
+.js .dropbutton-wrapper.dropbutton-single .dropbutton-widget .dropbutton-action a {
+  border-radius: 5px !important;
+  &:active,
+  &:hover,
+  &:focus{
+    border-radius: 5px !important;
+  }
+  //background-image: none !important;
+}
+
+
+[dir="rtl"].js .dropbutton-widget .dropbutton-action a,
+[dir="rtl"].js .dropbutton-widget .dropbutton-action input,
+[dir="rtl"].js .dropbutton-widget .dropbutton-action button {
+  border-radius: 0 5px 5px 0;
+}
+.js .dropbutton-multiple.open .dropbutton-action:last-child a,
+.js .dropbutton-multiple.open .dropbutton-action:last-child .button {
+    border-radius: 0 0 0 5px;
+}

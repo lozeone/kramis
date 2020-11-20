@@ -1,0 +1,141 @@
+// Mixins
+
+// Px to Em mixin
+// Unit mixins
+// Ems for breakpoints, using browser context font size
+@function bp-em($pixels, $context: 16) {
+  @return #{$pixels/$context}em;
+}
+
+// Ems in relation to base font size
+@function em($pixels, $context: $base-font-size) {
+  @return #{$pixels/$context}em;
+}
+
+// Rem conversion
+// Convert pixel values to rem.
+@function rem($px, $base: $base-font-size) {
+  @return ($px / $base) * 1rem;
+}
+
+// Rem font size conversion w/ px fallbacks
+// https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_fontSize.scss
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixels (without px suffix) that you want to convert
+ *
+ * e.g. p {@include fontSize(12);}
+ *
+ */
+
+// Function for converting a px based font-size to rem.
+@function calculateRem($size) {
+  $remSize: $size / $base-font-size;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: #{$size}px;
+  font-size: calculateRem($size);
+}
+
+// Preferred version of clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Centers a block level element, requires width
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Vertical align, all browsers http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+@mixin border-radius($top: 10px, $right: $top, $bottom: $top, $left: $right){
+  border-radius: $top $right $bottom $left;
+  -moz-border-radius: $top $right $bottom $left;
+  -webkit-border-top-left-radius: $top;
+  -webkit-border-top-right-radius: $right;
+  -webkit-border-bottom-right-radius: $bottom;
+  -webkit-border-bottom-left-radius: $left;
+}
+
+// Text shadow
+@mixin text-shadow($value: 0 1px 0 #ffffff){
+  -moz-text-shadow: $value;
+  -webkit-text-shadow: $value;
+  -o-text-shadow: $value;
+  text-shadow: $value;
+}
+
+@mixin box-shadow-double($one: none){
+  -moz-box-shadow: $one, $one;
+  -webkit-box-shadow: $one, $one;
+  box-shadow: $one, $one;
+}
+@mixin box-shadow($hor:none, $ver:0, $blur:0, $size:0, $color:0, $inset:''){
+  @if ($hor == 'none'){
+    -moz-box-shadow: $hor;
+    -webkit-box-shadow: $hor;
+    box-shadow: $hor;
+  }
+  @else {
+    @if ($inset == ''){
+      -moz-box-shadow: $hor $ver $blur $size $color;
+      -webkit-box-shadow: $hor $ver $blur $size $color;
+      box-shadow: $hor $ver $blur $size $color;
+   } @else {
+      -moz-box-shadow: $hor $ver $blur $size $color $inset;
+      -webkit-box-shadow: $hor $ver $blur $size $color $inset;
+      box-shadow: $hor $ver $blur $size $color $inset;
+    }
+  }
+}
+
+
+@mixin gradient($color1: #3859A8, $color2: #5190EF){
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(bottom, $color1 0%, $color2 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(bottom, $color1 0%, $color2 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(bottom, $color1 0%, $color2 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, $color1), color-stop(1, $color2));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(bottom, $color1 0%, $color2 100%);
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to top, $color1 0%, $color2 100%);
+}
+
+
+@mixin blueGradientButton(){
+  @include gradient($darker-blue, $bright-blue);
+  color: #fff;
+  border-color: $darker-blue;
+  text-shadow: none;
+  &:hover{
+    @include gradient($darkest-blue, $darker-blue);
+    color: #fff;
+    border-color: $darker-blue;
+    text-shadow: none;
+  }
+}

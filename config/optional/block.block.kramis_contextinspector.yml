@@ -1,0 +1,25 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - context
+    - context_ui
+  theme:
+    - kramis
+id: kramis_contextinspector
+theme: kramis
+region: footer
+weight: 0
+provider: null
+plugin: context_inspector
+settings:
+  id: context_inspector
+  label: 'Context inspector'
+  provider: context_ui
+  label_display: visible
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+    context_mapping: {  }

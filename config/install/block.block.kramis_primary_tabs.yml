@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+  theme:
+    - kramis
+id: kramis_primary_tabs
+theme: kramis
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary Tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+    context_mapping: {  }

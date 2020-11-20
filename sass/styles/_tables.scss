@@ -1,0 +1,26 @@
+
+table{
+  border: solid 1px $lighter-gray;
+}
+tr,
+.draggable-table.tabledrag-disabled tr{
+  color: $gray;
+}
+tr{
+  border-color: $lighter-gray;
+}
+td{
+  height: auto;
+}
+th{
+  background-color: $table-header-color;
+  height: auto;
+}
+
+.sortable-heading.is-active > a{
+  color: $bright-blue;
+  &::before{
+    border-color: $bright-blue;
+  }
+}
+

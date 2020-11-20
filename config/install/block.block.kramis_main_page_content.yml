@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - system
+  theme:
+    - kramis
+id: kramis_main_page_content
+theme: kramis
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+    context_mapping: {  }

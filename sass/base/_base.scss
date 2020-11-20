@@ -1,0 +1,67 @@
+// Base HTML Styles
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+
+.form-text,
+.form-tel,
+.form-email,
+.form-url,
+.form-search,
+.form-number,
+.form-color,
+.form-file,
+.form-textarea,
+.form-date,
+.form-time{
+  &:focus{
+    background-color: $pale-blue;
+    border-color: $bright-blue;
+    box-shadow: none;
+  }
+}
+
+// ######################
+// By default devel var dumps have a high z-index, this lowers it.
+pre.sf-dump, pre.sf-dump .sf-dump-default {
+    z-index: 10 !important;
+}
+
+// ###############################
+// Modal overlays
+.ui-widget-overlay{
+  background-color: $black;
+  opacity: 0.8;
+}
+.ui-dialog .ui-dialog-titlebar {
+/*     border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #ccc; */
+    border-radius: 0;
+    background-color: $off-black;
+    border: none;
+    //border-bottom: solid 1px #eee;
+    font-weight: bold;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    margin: 0; //-15px 5px;
+    padding: 1px;
+    height: 30px;
+    border-radius: 100%;
+    //background: #f7f7f7;
+    color: #666;
+    border: none;
+}
+.ui-dialog .ui-widget-content.ui-dialog-content,
+.ui-dialog .ui-dialog-content{
+  //padding: 0;
+}
