@@ -6,7 +6,7 @@ Drupal 8 Admin Theme. (sub theme of seven)
 This is an administration theme for Drupal 8 that I have been using on most of my D8 sites.
 It's a subtheme of Seven and loosely based on the starter theme "lightship" https://github.com/devcollaborative/drupal8-devcollab-lightship
 
-Its basicaly just what I feel are some css improvements and a few alter hook implementations to get a nicer admin experiance.
+Its basicaly just what I feel are some css improvements and a few alter hook implementations to get a nicer admin experience with some of the modules I commonly use.
 
 To complie the css you need Gulp.
 
