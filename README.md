@@ -8,6 +8,8 @@ It's a subtheme of Seven and loosely based on the starter theme "lightship" http
 
 Its basicaly just what I feel are some css improvements and a few alter hook implementations to get a nicer admin experience with some of the modules I commonly use.
 
+It's rough and needs to be cleaned up a bit, but it works.
+
 To complie the css you need Gulp.
 
 running npm install should install all the needed node modules
