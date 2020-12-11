@@ -2,7 +2,7 @@ name: Kramis
 type: theme
 description: 'Drupal 8 admin theme (sub theme of seven)'
 package: ILG
-core: 8.x
+core_version_requirement: ^8 || ^9
 libraries:
   - kramis/global-styling
   - kramis/fonts

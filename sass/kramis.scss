@@ -15,7 +15,6 @@
 //@import "base/typography";
 
 // Styles
-//@import "styles/admin";
 //@import "styles/layout";
 
 // my styles
@@ -57,7 +56,7 @@ h1,
 .content-header {
   overflow: hidden;
   padding: 24px 0 0;
-  background-color: #f7f7f7; //border-bottom: solid 1px #eee;
+  background-color: #f7f7f7;
 }
 .is-horizontal .tabs.primary a {
   padding: 1em 2em 1em 2em;
@@ -342,18 +341,7 @@ a.tabledrag-handle .handle {
     //min-width: 180px;
   }
 }
-/* .field--type-entity-reference{
-  .media__media_library{
-    width: 150px;
-    border: solid 1px #ccc;
-  }
-  .media-library-item__name{
-    font-size: 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-} */
+
 
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
