@@ -7,15 +7,12 @@ This is an administration theme for Drupal 8 that I have been using on most of m
 It's a subtheme of Seven and loosely based on the starter theme "lightship" https://github.com/devcollaborative/drupal8-devcollab-lightship
 
 Its basicaly just what I feel are some css improvements and a few alter hook implementations to get a nicer admin experience with some of the modules I commonly use.
-<<<<<<< HEAD
-=======
 
 It's rough and needs to be cleaned up a bit, but it works.
->>>>>>> 8e93d35e6ce684f8270cba7a1dbd801b3df77ea3
 
-To complie the css you need Gulp.
+To complie the css you need Gulp. run `gulp watch`
 
-running npm install should install all the needed node modules
+running `npm install` should install all the needed node modules
 
 #Setting Up Gulp
 --------
@@ -34,13 +31,13 @@ Steps detailed here: https://css-tricks.com/gulp-for-beginners/
 #Gulp Tasks
 --------
 
-gulp sass - compiles sass into CSS
+`gulp sass` - compiles sass into CSS
 
-gulp clean:css - deletes compiled CSS
+`gulp clean:css` - deletes compiled CSS
 
-gulp watch - watches sass directories for changes and recompiles whenever you save a change
+`gulp watch` - watches sass directories for changes and recompiles whenever you save a change
 
-gulp build - simple one time build task
+`gulp build` - simple one time build task
 
 
 
