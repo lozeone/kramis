@@ -5,6 +5,123 @@
  * Functions to support theming in the kramis theme.
  */
 
+function _kramis_entity_form_col(&$form, &$form_state, $form_id){
+    // Use the node edit form template.
+  $form['#theme'][] = 'node_edit_form';
+
+  // Use the node form layout library.
+  $form['#attached']['library'] = ['node/drupal.node'];
+
+  // Create the advanced element if it doesn't exist.
+  if (!isset($form['advanced'])) {
+    $form['advanced'] = [
+      '#type' => 'container',
+      '#weight' => 99,
+    ];
+  }
+  else {
+    // Make 'advanced' a container instead of vertical_tabs.
+    $form['advanced']['#type'] = 'container';
+  }
+
+  // Add the style class to tell the admin theme how to style it.
+  $form['advanced']['#attributes']['class'][] = 'entity-meta';
+
+  if(!isset($form['meta'])){
+    $form['meta'] = [
+      '#type' => 'container',
+      '#group' => 'advanced',
+      '#weight' => -10,
+      '#title' => 'Status',
+      '#attributes' => ['class' => ['entity-meta__header']],
+      '#tree' => TRUE,
+    ];
+  }
+}
+/**
+ * Alters an entity edit form layout.
+ *
+ * Move the published checkbox to the meta sidebar.
+ * Duplicate the submit button and put it in the meta sidebar.
+ */
+function _kramis_alter_entity_form(&$form, &$form_state, $form_id) {
+
+
+
+  // Move detail elements into 'advanced'.
+  //$form['detail_element_you_want_to_move']['#group'] = 'advanced';
+
+  // move published to meta box.
+  if(isset($form['status'])){
+    $form['status']['#group'] = 'meta';
+    $form['status']['#weight'] = 1;
+  }
+
+  // Duplicate the submit button in to the metabox.
+  if(isset($form['actions']['submit'])){
+    $form['sidebar_actions'] = [
+      '#type' => 'container',
+      '#group' => 'meta',
+      '#weight' => -100,
+      '#attributes' => ['class' => ['sidebar-actions', 'form-actions']],
+      'submit' => $form['actions']['submit'],
+    ];
+  }
+
+  // Use the formatted name in the author meta.
+  if(isset($form['meta']['author']['#markup'])){
+    $entity = $form_state->getFormObject()->getEntity();
+    $form['meta']['author']['#markup'] = $entity->getOwner()->getDisplayName();
+  }
+
+  // Move the lead image if there is one.
+  if(isset($form['field_lead_image'])){
+    // Move the lead image field into the meta box.
+    $form['field_lead_image']['#group'] = 'meta';
+    //$form['field_lead_image']['widget'][0]['#weight'] = 500;
+  }
+
+}
+
+/**
+ * Implements hook_form_BASE_FORM_alter().
+ *
+ * Group entities.
+ */
+function kramis_form_group_form_alter(&$form, &$form_state, $form_id) {
+  _kramis_entity_form_col($form, $form_state, $form_id);
+  _kramis_alter_entity_form($form, $form_state, $form_id);
+
+}
+
+/**
+ * Implements hook_form_BASE_FORM_alter().
+ *
+ * Commerce Product entities.
+ */
+function kramis_form_commerce_product_form_alter(&$form, &$form_state, $form_id) {
+  _kramis_alter_entity_form($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_alter().
+ *
+ * Node entities.
+ */
+function kramis_form_node_form_alter(&$form, &$form_state, $form_id) {
+  _kramis_alter_entity_form($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_alter().
+ *
+ * Media entities.
+ */
+function kramis_form_media_form_alter(&$form, &$form_state, $form_id) {
+  _kramis_entity_form_col($form, $form_state, $form_id);
+  _kramis_alter_entity_form($form, $form_state, $form_id);
+}
+
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
@@ -90,7 +207,7 @@ function kramis_theme_suggestions_fieldset_alter(array &$suggestions, array $var
  */
 function kramis_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
+  $variables['display_submitted'] = FALSE;
 }
 
 /**

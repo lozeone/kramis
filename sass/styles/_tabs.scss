@@ -2,6 +2,11 @@
 .vertical-tabs {
   margin: 3em 0;
   overflow: hidden;
+  .seven-details__description{
+    font-size: 1.2em;
+    line-height: 1.5em;
+    padding: 0 0 1.5em 0;
+  }
 }
 .vertical-tabs__menu{
   border-top: none;
@@ -36,3 +41,9 @@
     margin: 0 0 -1px -1px;
   }
 }
+.layout-region .field-group-tabs-wrapper:first-child{
+    .vertical-tabs{
+      margin: 0;
+    }
+  }
+

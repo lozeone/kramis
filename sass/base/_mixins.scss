@@ -139,3 +139,25 @@
     text-shadow: none;
   }
 }
+
+@mixin buttonReset(){
+  border: none;
+  border-radius: 0;
+  background-image: none;
+  background: transparent !important;
+  text-decoration: underline;
+  padding: 0.4em 0;
+  font-weight: normal;
+  text-shadow: none;
+  @include box-shadow(none);
+  &:active,
+  &:hover{
+    background-color: none;
+    color: inherit;
+    @include box-shadow(none);
+    border: none;
+  }
+  &:active{
+    opacity: 0.7;
+  }
+}

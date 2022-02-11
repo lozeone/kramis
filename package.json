@@ -1,7 +1,7 @@
 {
   "name": "kramis",
   "version": "1.0.0",
-  "description": "Drupal 8 admin theme (sub theme of Seven) loosely based on lightship.",
+  "description": "Drupal 9 admin theme (sub theme of Seven).",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,18 @@
   "license": "ISC",
   "devDependencies": {
     "del": "^3.0.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-environments": "^1.0.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^2.1.2",
+    "postcss-clean": "^1.2.2",
+    "sass": "^1.43.4",
+    "run-sequence": "^2.2.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-airbnb-base": "^14.1.0",
@@ -18,15 +30,16 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1",
-    "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
     "gulp4-run-sequence": "^1.0.1",
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "ajv": "^5.5.2"
+    "ajv": "^5.5.2",
+    "browserify-shim": "^3.8.14",
+    "gulp": "^4.0.2",
+    "lodash": "^4.17.4",
+    "vinyl": "^2.2.1"
   },
   "engines": {
     "node": "11.10.0"

@@ -15,11 +15,14 @@
 //@import "base/typography";
 
 // Styles
+//@import "styles/admin";
 //@import "styles/layout";
 
 // my styles
 @import "styles/pager";
 @import "styles/dropbuttons";
+@import "styles/entity-browser";
+
 //@import "styles/form";
 //@import "styles/tables";
 @import "styles/tabs";
@@ -204,8 +207,10 @@ a.tabledrag-handle .handle {
   .group-inline-wrapper{
     clear: both;
     width: 100%;
-    float: left;
-    padding-bottom: 2em;
+    /* float: left;
+    padding-bottom: 2em; */
+    display: inline-block;
+    vertical-align: top;
   }
 }
 
@@ -215,16 +220,124 @@ a.tabledrag-handle .handle {
   border-top: solid 1px #eee;
   padding-top: 3em;
 }
-.entity-browser-modal-iframe{
-  background-color: #fff;
+
+div.progress{
+  max-width: 900px;
+}
+
+// ======================
+.user.view-mode-simple{
+  .field--type-image{
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 100%;
+    overflow: hidden;
+    img{
+      vertical-align: middle;
+    }
+  }
+  a{
+    color: #111;
+  }
+  .username{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #111;
+  }
+}
+
+// IEF forms
+///////////////////////////////////////
+
+// a closed ief table row (shows entity details)
+tr.ief-row-entity{
+
+}
+
+// The table row when there is an open form below it.
+//
+// @todo - The operations td is missing for this, preventing me from
+// applying a bg clolor to the whole row. (applying to the tr isnt working)
+// We should see if i can add an empty td when this happens.
+// Or make the previous td have a colspan="2".
+// maybe in hook_preprocess_table()? If this not just a theme issue
+// it should be corrected in a mod so it works on both ends.
+tr.ief-row-entity.ief-row-entity-form{
+  background-color: $pale-blue !important;
+  td{
+    background-color: $pale-blue !important;
+  }
+}
+
+// the open form table row.
+tr.ief-row-form{
+  td{
+    padding: 1em 1.5em;
+  }
+  .ief-form-row > .form-wrapper{
+    padding: 0.5em 0;
+/*     .form-wrapper{
+      padding: 0;
+    } */
+  }
+  .ief-form-row{
+    padding: 0;
+  }
+}
+
+// IEF form below the table (new items)
+fieldset.ief-form-bottom{
+ border-color: $light-gray;
+ padding: 0.9em 1.5em 1.5em 1.5em;
+}
+
+// hide the throbbers.
+.field--widget-inline-entity-form-complex,
+.ief-entity-table{
+  .ajax-progress{
+    display: none;
+  }
+}
+
+.ief-form-actions{
+  padding: 1em 0;
+}
+
+.ief-button-ief_add_cancel,
+.ief-button-ief_edit_cancel,
+.ief-button-ief_remove_cancel,
+.ief-cancel{
+  @include buttonReset();
+}
+
+.ief-remove-message{
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+
+.field--widget-inline-entity-form-complex{
+  margin-top: 2em;
 }
 
 
-.field--widget-entity-browser-entity-reference {
-  /* text-align: center;
-  border: solid 2px #eee;
-  border-radius: 3px;
-  background-color: #f7f7f7; */
+///////////////////////////////////////
+
+.entity-browser-modal-iframe{
+  background-color: #fff;
+}
+.entity-browser-trigger{
+  padding: 0.5em 1em;
+  margin: 0.3em 0 0 0;
+  font-size: 1.1em;
+}
+
+/* .field--widget-entity-browser-entity-reference {
+
   p{
     padding: 0;
   }
@@ -233,7 +346,6 @@ a.tabledrag-handle .handle {
   }
   input {
     margin: 0.5em 0;
-    /* text-align: center; */
   }
   .entities-list {
     text-align: left;
@@ -306,21 +418,20 @@ a.tabledrag-handle .handle {
       display: none;
     }
   }
-}
+} */
 
 .block-help{
-      padding: 1em;
-    background: $pale-blue;
-    margin: 1.5em 0;
-    font-size: 1.2em;
-    color: $bright-blue;
-    border: solid 1px $bright-blue;
-    line-height: 1.5em;
-    border-radius: 3px;
-    p:last-child{
-      margin-bottom: 0;
-    }
-
+  padding: 1em;
+  background: $pale-blue;
+  margin: 1.5em 0;
+  font-size: 1.2em;
+  color: $bright-blue;
+  border: solid 1px $bright-blue;
+  line-height: 1.5em;
+  border-radius: 3px;
+  p:last-child{
+    margin-bottom: 0;
+  }
 }
 
 .media__media_library{
@@ -343,13 +454,13 @@ a.tabledrag-handle .handle {
 }
 
 
-
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select {
     font-size: 1em;
     padding: 0.6em 1.571em 0.6em 0.5em; //1px 1.571em 1px 0.5em;
   }
 }
+
 @media screen and (min-width: 780px),
 (min-device-height: 780px) and (orientation: landscape) {
   .layout-region-node-main,
@@ -357,13 +468,14 @@ a.tabledrag-handle .handle {
     padding-right: 4em; //max-width: 900px;
   }
 }
+
 .page-content{
   padding: 1em 0;
 }
-/* .region-pre-content{
-  padding: 1em 0;
-} */
 
+
+
+.commerce-product-form,
 .node-form{
   .field--name-title{
     input.form-text{
@@ -371,7 +483,26 @@ a.tabledrag-handle .handle {
       font-size: 20px;
     }
   }
+  .ief-form{
+    .field--name-title{
+      input.form-text{
+        font-size: inherit;
+        max-width: 100%;
+        width: auto;
+      }
+    }
+  }
+  .field--name-field-subtitle,
+  .field--name-field-dek{
+    input.form-text{
+      width: 100%;
+      font-size: 16px;
+    }
+  }
 }
+
+
+
 .views-form,
 .vbo-view-form{
   #edit-header{
@@ -383,10 +514,6 @@ a.tabledrag-handle .handle {
   }
 }
 
-
-
-
-
 .webform-submission-form{
   max-width: 700px;
   margin: auto;
@@ -395,8 +522,90 @@ a.tabledrag-handle .handle {
 }
 
 
+.form-radios{
+  padding: 0.3em 0;
+}
+
+.entity-meta__header{
+  .sidebar-actions{
+    float: right;
+    .button{
+      font-size: 1.2em;
+    }
+  }
+  .form-wrapper{
+    padding: 0.5em 0;
+  }
+}
 
 
+.container-inline div.form-item{
+  margin-bottom: 0;
+  margin-top: 0.2em;
+}
+
+
+.field--type-datetime,
+.field--type-timestamp{
+  .container-inline{
+    margin-top: 0.4em;
+    &:first-child{
+      margin-top: none;
+    }
+  }
+}
+
+.field--type-daterange{
+  .container-inline{
+    margin-bottom: 0.6em;
+    &:last-child{
+      margin-bottom: none;
+    }
+  }
+}
+
+ul.tips,
+div.description,
+.form-item .description{
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  font-size: 0.95em;
+  color: $med-gray;
+}
+.extra-description{
+  margin-top: 0;
+  margin-bottom: 0.3em;
+  font-size: 0.95em;
+  color: $med-gray;
+}
+.form-type-radio,
+.form-type-checkbox{
+  .description{
+    margin-left: 1.3em;
+    margin-top: 0.2em;
+  }
+}
+
+.field--widget-bootstrap-toggle-switch{
+  .description{
+    margin-left: 0;
+  }
+}
+
+.vertical-tabs{
+  .details-wrapper{
+    > .form-wrapper{
+      margin-bottom: 2em;
+    }
+  }
+}
+
+
+.layout-region{
+  > .form-wrapper{
+    margin-bottom: 2em;
+  }
+}
 
 // ##############################################
 // Responsive styles: These need to go last so they can

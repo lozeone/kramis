@@ -5,15 +5,14 @@
 
 // https://css-tricks.com/gulp-for-beginners/
 const gulp = require('gulp');
-// Requires the gulp-sass plugin.
-const sass = require('gulp-sass');
-// Create sass sourcemaps.
+// Requires the gulp-sass plugin
+const sass = require('gulp-sass')(require('sass'));
+// Create sass sourcemaps
 const sourcemaps = require('gulp-sourcemaps');
-// Delete generated files when needed.
+// Delete generated files when needed
 const del = require('del');
-// Run a list of tasks in order.
-// const runSequence = require('run-sequence');
-const runSequence = require('gulp4-run-sequence');
+// Run a list of tasks in order
+const runSequence = require('run-sequence');
 
 // Used to set whether CSS format is compressed or expanded when compiled.
 const plumber = require('gulp-plumber');
