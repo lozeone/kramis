@@ -5,6 +5,8 @@
  * Functions to support theming in the kramis theme.
  */
 
+
+// Ads the sidbar entity form layout to other entities besides node.
 function _kramis_entity_form_col(&$form, &$form_state, $form_id){
     // Use the node edit form template.
   $form['#theme'][] = 'node_edit_form';
@@ -44,7 +46,7 @@ function _kramis_entity_form_col(&$form, &$form_state, $form_id){
  * Move the published checkbox to the meta sidebar.
  * Duplicate the submit button and put it in the meta sidebar.
  */
-function _kramis_alter_entity_form(&$form, &$form_state, $form_id) {
+function _kramis_move_entity_form_fields(&$form, &$form_state, $form_id) {
 
 
 
@@ -90,7 +92,7 @@ function _kramis_alter_entity_form(&$form, &$form_state, $form_id) {
  */
 function kramis_form_group_form_alter(&$form, &$form_state, $form_id) {
   _kramis_entity_form_col($form, $form_state, $form_id);
-  _kramis_alter_entity_form($form, $form_state, $form_id);
+  _kramis_move_entity_form_fields($form, $form_state, $form_id);
 
 }
 
@@ -100,7 +102,7 @@ function kramis_form_group_form_alter(&$form, &$form_state, $form_id) {
  * Commerce Product entities.
  */
 function kramis_form_commerce_product_form_alter(&$form, &$form_state, $form_id) {
-  _kramis_alter_entity_form($form, $form_state, $form_id);
+  _kramis_move_entity_form_fields($form, $form_state, $form_id);
 }
 
 /**
@@ -109,7 +111,7 @@ function kramis_form_commerce_product_form_alter(&$form, &$form_state, $form_id)
  * Node entities.
  */
 function kramis_form_node_form_alter(&$form, &$form_state, $form_id) {
-  _kramis_alter_entity_form($form, $form_state, $form_id);
+  _kramis_move_entity_form_fields($form, $form_state, $form_id);
 }
 
 /**
@@ -119,7 +121,7 @@ function kramis_form_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function kramis_form_media_form_alter(&$form, &$form_state, $form_id) {
   _kramis_entity_form_col($form, $form_state, $form_id);
-  _kramis_alter_entity_form($form, $form_state, $form_id);
+  _kramis_move_entity_form_fields($form, $form_state, $form_id);
 }
 
 /**
