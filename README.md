@@ -1,5 +1,5 @@
 # kramis
-Drupal 8 Admin Theme. (sub theme of seven)
+Drupal 8/9 Admin Theme. (sub theme of seven)
 
 #Introduction
 -----------
