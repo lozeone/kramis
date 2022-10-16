@@ -1,0 +1,21 @@
+{
+    "name": "drupal/kramis",
+    "description": "Kramis admin theme for drupal 9.",
+    "type": "drupal-theme",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://github.com/lozeone/kramis",
+    "support": {
+        "issues": "https://github.com/lozeone/kramis",
+        "source": "https://github.com/lozeone/kramis"
+    },
+    "authors": [
+        {
+            "name": "lozeone",
+            "homepage": "https://github.com/lozeone"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8",
+        "drupal/core": "^9.3"
+    }
+}
