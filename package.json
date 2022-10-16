@@ -1,6 +1,6 @@
 {
   "name": "kramis",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Drupal 9 admin theme (sub theme of Seven).",
   "main": "index.js",
   "scripts": {
@@ -42,6 +42,6 @@
     "vinyl": "^2.2.1"
   },
   "engines": {
-    "node": "11.10.0"
+    "node": ">=11.10.0"
   }
 }

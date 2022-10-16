@@ -1,0 +1,153 @@
+/**
+ *  Styles for ajax throbbers.
+ *  Images generated with https://loading.io/asset/551795
+ */
+
+$dark_throbber: '../images/throbbers/gear-dark-animated.svg';
+$light_throbber: '../images/throbbers/gear-light-animated.svg';
+$throbber_background_color: rgba(0, 0, 0, 0.85);
+//
+//
+.ajax-progress {
+  display: inline-block;
+  padding: 1px 5px 2px 5px;
+}
+.ajax-progress-throbber {
+  .throbber {
+    display: inline;
+    padding: 1px 8px 2px;
+    background: transparent url($dark_throbber) no-repeat 0 center;
+    background-size: contain;
+  }
+  .message {
+    display: inline;
+    padding: 1px 5px 2px;
+  }
+}
+.dropbutton .ajax-progress-throbber {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-position: 0 0;
+  .throbber {
+    //height: 100%;
+    display: block;
+    opacity: 0.6;
+  }
+}
+.has-multiple-fields-remove-button{
+  .ajax-progress-throbber{
+    .throbber {
+      margin: 0 2px;
+      //vertical-align: middle;
+      //display: inline-block;
+      float: none;
+      width: 20px;
+      height: 20px;
+      padding: 0; //3px;
+      top: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+}
+.ajax-progress-bar {
+  width: 16em;
+}
+/* Full screen throbber */
+
+.ajax-progress-fullscreen {
+  position: fixed;
+  z-index: 9000;
+  top: 0;
+  /* Can't do center:50% middle: 50%, so approximate it for a typical window size. */
+  left: 0;
+  /* LTR */
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  opacity: 1;
+  border-radius: 0; // @see https://loading.io/asset/549521
+  background-image: url($light_throbber); //Spinner-0.4s-144px.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $throbber_background_color;
+}
+// page_load_progress module.
+.page-load-progress-lock-screen {
+  position: fixed;
+  z-index: 9000;
+  top: 0;
+  /* Can't do center:50% middle: 50%, so approximate it for a typical window size. */
+  left: 0;
+  /* LTR */
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  background-color: $throbber_background_color;
+}
+.page-load-progress-throbber {
+  background-image: url($light_throbber);
+  background-repeat: no-repeat;
+  height: 80px;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  width: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  z-index: 99999;
+}
+/**
+ * Ajax throbber in modal dialogs.
+ */
+
+.ui-dialog .ajax-progress-throbber {
+  position: fixed;
+  z-index: 9000;
+  top: 48.5%;
+  /* Can't do center:50% middle: 50%, so approximate it for a typical window size. */
+  left: 49%;
+  width: 55px;
+  height: 55px;
+  border-radius: 5px;
+  padding: 4px;
+  opacity: 1;
+  background-color: #232323;
+  background-image: url($light_throbber); //background-image: url(../images/throbbers/Spinner-0.4s-144px.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $throbber_background_color;
+  border: none;
+}
+/**
+ * @file
+ * Visual styles for animated throbber.
+ *
+ * @see autocomplete.js
+ */
+
+.js input.form-autocomplete {
+  //background-image: url(../images/throbbers/autocomplete-inactive.png);
+  //background-repeat: no-repeat;
+  //background-position: 100% center;
+}
+/* .js[dir="rtl"] input.form-autocomplete {
+  background-position: 0% center;
+} */
+
+.js input.form-autocomplete.ui-autocomplete-loading {
+  background-image: url($dark_throbber);
+  background-size: auto 70%;
+  background-position: 100% center;
+}
+/* .js[dir="rtl"] input.form-autocomplete.ui-autocomplete-loading {
+  background-position: 0% center;
+} */

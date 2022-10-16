@@ -16,6 +16,6 @@
     ],
     "require": {
         "php": "^7.4 || ^8",
-        "drupal/core": "^9.3"
+        "drupal/core": "^8 || ^9"
     }
 }

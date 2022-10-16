@@ -18,17 +18,17 @@
 //@import "styles/admin";
 //@import "styles/layout";
 
-// my styles
+// styles
+@import "styles/form";
 @import "styles/pager";
 @import "styles/dropbuttons";
 @import "styles/entity-browser";
 
-//@import "styles/form";
 //@import "styles/tables";
 @import "styles/tabs";
-//@import "styles/throbbers";
+@import "styles/throbbers";
 //@import "styles/comments";
-
+@import "styles/ckeditor";
 
 // Component Styles
 @import "styles/regions/header";
@@ -36,16 +36,8 @@
 
 // Other
 //@import "print";
-* {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-}
 
-body {
-  font: normal 85.5%/1.4em $default-family;
-}
+
 h1,
 .heading-a {
   margin: 0;
@@ -53,26 +45,32 @@ h1,
   font-weight: bold;
   line-height: 1.875em;
 }
-.block-system-main-block{
+
+.block-system-main-block {
   padding-top: 2em;
 }
+
 .content-header {
   overflow: hidden;
   padding: 24px 0 0;
   background-color: #f7f7f7;
 }
+
 .is-horizontal .tabs.primary a {
   padding: 1em 2em 1em 2em;
   background-image: none;
 }
+
 .breadcrumb {
   line-height: 1.5em;
   padding: 0;
+
   a {
     color: #666;
     padding: 0 0.3em;
   }
 }
+
 .no-touchevents {
   .action-links {
     .button--small {
@@ -80,131 +78,70 @@ h1,
     }
   }
 }
+
 .action-links {
   padding: 5px 0;
-  .button{
+
+  .button {
     text-transform: uppercase;
   }
 }
+
 .button {
   border-radius: 5px;
   padding: 0.5em 1.5em;
   font-size: 0.755rem;
 }
-.button--danger{
+
+.button--danger {
   padding: 0;
 }
+
 #edit-actions {
   .button {
     font-size: 1.3em;
   }
 }
-input.form-autocomplete,
-input.form-text,
-input.form-tel,
-input.form-email,
-input.form-url,
-input.form-search,
-input.form-number,
-input.form-color,
-input.form-file,
-input.form-date,
-input.form-time,
-textarea.form-textarea {
-  padding: 0.7em 1em;
-}
 
-.view-filters {
-  padding: 1em 1.5em;
-
-
-  margin-bottom: 2em;
-  margin-top: 0.5em;
-
-    background-color: #fcfcfc;
-
-    border: solid 1px $light-gray;
-    box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
-
-  label{
-    font-size: 12px;
-    font-weight: normal;
-    text-transform: uppercase;
-  }
-  .form--inline{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #edit-actions,
-  .form-actions{
-    align-self: flex-end;
-    margin: 0.75em 0;
-    clear: none;
-    input.button {
-      font-size: 14px;
-      line-height: 1.7em;
-
-      &:first-child{
-        @include gradient($dark-green, $green);
-        color: #fff;
-        border-color: $light-green;
-         border-bottom-color: $dark-green;
-        text-shadow: none;
-        box-shadow: 0 1px 0 0 rgba(0,0,0,0.3);
-        text-transform: uppercase;
-        //border-radius: 3px;
-        &:hover{
-          @include gradient($darker-green, $dark-green);
-          color: #fff;
-          border-color: $dark-green;
-          border-bottom-color: $darker-green;
-          text-shadow: none;
-        }
-
-      }
-
-    }
-  }
-}
-
-table{
+table {
   font-size: 0.95em;
-  td{
+
+  td {
     padding: 0.4em 0.5em;
   }
-  th{
+
+  th {
     padding-right: 0.5em;
     padding-left: 0.5em;
     font-size: 12px;
   }
 }
 
-
 a.tabledrag-handle .handle {
-    width: 25px;
-    height: 25px;
-    margin: 0;
-    background: url(/core/themes/stable/images/core/icons/787878/move.svg) no-repeat;
-    padding: 6px;
+  width: 30px;
+  height: auto;
+  margin: 0;
+  padding: 6px;
+  float: left;
+  background-position: top center;
 }
+
 .draggable a.tabledrag-handle {
-    margin-left: 0
+  margin-left: 0
 }
-
-
 
 @media (min-width: $desktop) {
-  .group-left{
+  .group-left {
     float: left;
     width: 50%;
     padding-right: 2em;
   }
-  .group-right{
+  .group-right {
     float: right;
     width: 50%;
     padding-left: 2em;
   }
-  .group-inline-wrapper{
+  .group-inline-wrapper {
     clear: both;
     width: 100%;
     /* float: left;
@@ -214,33 +151,35 @@ a.tabledrag-handle .handle {
   }
 }
 
-
-#footer{
+#footer {
   margin-top: 3em;
   border-top: solid 1px #eee;
   padding-top: 3em;
 }
 
-div.progress{
+div.progress {
   max-width: 900px;
 }
 
 // ======================
-.user.view-mode-simple{
-  .field--type-image{
+.user.view-mode-simple {
+  .field--type-image {
     width: 40px;
     display: inline-block;
     vertical-align: middle;
     border-radius: 100%;
     overflow: hidden;
-    img{
+
+    img {
       vertical-align: middle;
     }
   }
-  a{
+
+  a {
     color: #111;
   }
-  .username{
+
+  .username {
     display: inline-block;
     vertical-align: middle;
     padding: 0 0.5em;
@@ -250,12 +189,11 @@ div.progress{
   }
 }
 
+
 // IEF forms
 ///////////////////////////////////////
-
 // a closed ief table row (shows entity details)
-tr.ief-row-entity{
-
+tr.ief-row-entity {
 }
 
 // The table row when there is an open form below it.
@@ -266,161 +204,80 @@ tr.ief-row-entity{
 // Or make the previous td have a colspan="2".
 // maybe in hook_preprocess_table()? If this not just a theme issue
 // it should be corrected in a mod so it works on both ends.
-tr.ief-row-entity.ief-row-entity-form{
+tr.ief-row-entity.ief-row-entity-form {
   background-color: $pale-blue !important;
-  td{
+
+  td {
     background-color: $pale-blue !important;
   }
 }
 
 // the open form table row.
-tr.ief-row-form{
-  td{
+tr.ief-row-form {
+  td {
     padding: 1em 1.5em;
   }
-  .ief-form-row > .form-wrapper{
+
+  .ief-form-row > .form-wrapper {
     padding: 0.5em 0;
-/*     .form-wrapper{
+    /*     .form-wrapper{
       padding: 0;
     } */
   }
-  .ief-form-row{
+
+  .ief-form-row {
     padding: 0;
   }
 }
 
 // IEF form below the table (new items)
-fieldset.ief-form-bottom{
- border-color: $light-gray;
- padding: 0.9em 1.5em 1.5em 1.5em;
+fieldset.ief-form-bottom {
+  border-color: $light-gray;
+  padding: 0.9em 1.5em 1.5em 1.5em;
 }
 
 // hide the throbbers.
 .field--widget-inline-entity-form-complex,
-.ief-entity-table{
-  .ajax-progress{
+.ief-entity-table {
+  .ajax-progress {
     display: none;
   }
 }
 
-.ief-form-actions{
+.ief-form-actions {
   padding: 1em 0;
 }
 
 .ief-button-ief_add_cancel,
 .ief-button-ief_edit_cancel,
 .ief-button-ief_remove_cancel,
-.ief-cancel{
+.ief-cancel {
   @include buttonReset();
 }
 
-.ief-remove-message{
+.ief-remove-message {
   font-size: 1.2em;
   font-weight: bold;
   line-height: 1.4em;
 }
 
-.field--widget-inline-entity-form-complex{
+.field--widget-inline-entity-form-complex {
   margin-top: 2em;
 }
 
-
 ///////////////////////////////////////
-
-.entity-browser-modal-iframe{
+.entity-browser-modal-iframe {
   background-color: #fff;
 }
-.entity-browser-trigger{
+
+.entity-browser-trigger {
   padding: 0.5em 1em;
   margin: 0.3em 0 0 0;
   font-size: 1.1em;
 }
 
-/* .field--widget-entity-browser-entity-reference {
 
-  p{
-    padding: 0;
-  }
-  .ajax-progress {
-    display: none;
-  }
-  input {
-    margin: 0.5em 0;
-  }
-  .entities-list {
-    text-align: left;
-    .item-container {
-      position: relative;
-      margin: 0.3em;
-      text-align: center;
-      border: solid 2px #f7f7f7;
-      transition: border 0.1s ease-in;
-      max-width: 200px;
-      padding: 5px;
-      &:hover {
-        opacity: 1;
-        border-color: $accent-color;
-        background-color: $pale-blue;
-      }
-      .remove-item {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        background-color: #fff;
-        color: #ff0000;
-        display: inline-block;
-        line-height: 30px;
-        border-radius: 100%;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        cursor: pointer;
-        z-index: 10;
-      }
-      article {
-        //overflow: hidden;
-      }
-      .media-library-item__preview {
-        height: 200px;
-        .field--name-thumbnail {
-          height: 100%;
-        }
-        img {
-          height: 100%;
-          width: auto;
-        }
-      }
-      .media-library-item__attributes {
-        position: absolute;
-        bottom: 1px;
-        left: 0;
-        right: 0;
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.6);
-        font-size: 11px;
-        line-height: 1em;
-        overflow: hidden;
-        padding: 4px;
-        display: none;
-      }
-      &.label{
-        background: #fff;
-        padding: .3em 0 0.3em 1em;
-        margin: 0 0.5em 0 0;
-        .remove-item {
-          position: initial;
-          left: 0;
-          right: 0;
-        }
-      }
-    }
-    .remove-button {
-      display: none;
-    }
-  }
-} */
-
-.block-help{
+.block-help {
   padding: 1em;
   background: $pale-blue;
   margin: 1.5em 0;
@@ -429,30 +286,33 @@ fieldset.ief-form-bottom{
   border: solid 1px $bright-blue;
   line-height: 1.5em;
   border-radius: 3px;
-  p:last-child{
+
+  p:last-child {
     margin-bottom: 0;
   }
 }
 
-.media__media_library{
+.media__media_library {
   position: relative;
   background-color: $off-white;
-  .field--name-thumbnail{
+
+  .field--name-thumbnail {
     background-color: $off-white;
   }
 }
-.media-library-item__attributes{
+
+.media-library-item__attributes {
   max-width: 100%;
   border-top: solid 1px $light-gray;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
+
 .media-library-widget-modal,
-.media-library-selection{
-  .media-library-item--grid{
+.media-library-selection {
+  .media-library-item--grid {
     //min-width: 180px;
   }
 }
-
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select {
@@ -469,96 +329,105 @@ fieldset.ief-form-bottom{
   }
 }
 
-.page-content{
+.page-content {
   padding: 1em 0;
 }
 
+.sidebar-actions {
+  margin: 0;
+}
 
+.entity-meta__header {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
 
 .commerce-product-form,
-.node-form{
-  .field--name-title{
-    input.form-text{
+.node-form {
+  .field--name-title {
+    input.form-text {
       width: 100%;
       font-size: 20px;
     }
   }
-  .ief-form{
-    .field--name-title{
-      input.form-text{
+
+  .ief-form {
+    .field--name-title {
+      input.form-text {
         font-size: inherit;
         max-width: 100%;
         width: auto;
       }
     }
   }
+
   .field--name-field-subtitle,
-  .field--name-field-dek{
-    input.form-text{
+  .field--name-field-dek {
+    input.form-text {
       width: 100%;
       font-size: 16px;
     }
   }
 }
 
-
-
 .views-form,
-.vbo-view-form{
-  #edit-header{
+.vbo-view-form {
+  #edit-header {
     padding: 1em 1.5em;
     background-color: #fcfcfc;
     margin: 1em 0;
     border: solid 1px $light-gray;
-    box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
   }
 }
 
-.webform-submission-form{
+.webform-submission-form {
   max-width: 700px;
   margin: auto;
   padding: 1em 2em;
   border: solid 1px #eee;
 }
 
-
-.form-radios{
+.form-radios {
   padding: 0.3em 0;
 }
 
-.entity-meta__header{
-  .sidebar-actions{
+.entity-meta__header {
+  .sidebar-actions {
     float: right;
-    .button{
+
+    .button {
       font-size: 1.2em;
     }
   }
-  .form-wrapper{
+
+  .form-wrapper {
     padding: 0.5em 0;
   }
 }
 
-
-.container-inline div.form-item{
+.container-inline div.form-item {
   margin-bottom: 0;
   margin-top: 0.2em;
 }
 
-
 .field--type-datetime,
-.field--type-timestamp{
-  .container-inline{
+.field--type-timestamp {
+  .container-inline {
     margin-top: 0.4em;
-    &:first-child{
+
+    &:first-child {
       margin-top: none;
     }
   }
 }
 
-.field--type-daterange{
-  .container-inline{
+.field--type-daterange {
+  .container-inline {
     margin-bottom: 0.6em;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: none;
     }
   }
@@ -566,46 +435,48 @@ fieldset.ief-form-bottom{
 
 ul.tips,
 div.description,
-.form-item .description{
+.form-item .description {
   margin-top: 0.3em;
   margin-bottom: 0;
   font-size: 0.95em;
   color: $med-gray;
 }
-.extra-description{
+
+.extra-description {
   margin-top: 0;
   margin-bottom: 0.3em;
   font-size: 0.95em;
   color: $med-gray;
 }
+
 .form-type-radio,
-.form-type-checkbox{
-  .description{
+.form-type-checkbox {
+  .description {
     margin-left: 1.3em;
     margin-top: 0.2em;
   }
 }
 
-.field--widget-bootstrap-toggle-switch{
-  .description{
+.field--widget-bootstrap-toggle-switch {
+  .description {
     margin-left: 0;
   }
 }
 
-.vertical-tabs{
-  .details-wrapper{
-    > .form-wrapper{
+.vertical-tabs {
+  .details-wrapper {
+    > .form-wrapper {
       margin-bottom: 2em;
     }
   }
 }
 
-
-.layout-region{
-  > .form-wrapper{
+.layout-region {
+  > .form-wrapper {
     margin-bottom: 2em;
   }
 }
+
 
 // ##############################################
 // Responsive styles: These need to go last so they can
@@ -614,12 +485,15 @@ div.description,
 @media (min-width: $tablet) {
   @import "responsive/tablet";
 }
+
 @media (min-width: $tablet-plus) {
   @import "responsive/tablet_plus";
 }
+
 @media (min-width: $desktop) {
   @import "responsive/desktop";
 }
+
 @media (min-width: $desktop_plus) {
   @import "responsive/desktop_plus";
 }

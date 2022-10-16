@@ -1,0 +1,13 @@
+// Some fixes fror ckeditor buttons.
+.ckeditor-buttons{
+  li{
+    a{
+      vertical-align: middle;
+      display: inline-block;
+      width: auto;
+    }
+    .cke-icon-only{
+      width: auto;
+    }
+  }
+}

@@ -7,24 +7,11 @@
   -ms-box-sizing: border-box;
 }
 
-
-.form-text,
-.form-tel,
-.form-email,
-.form-url,
-.form-search,
-.form-number,
-.form-color,
-.form-file,
-.form-textarea,
-.form-date,
-.form-time{
-  &:focus{
-    background-color: $pale-blue;
-    border-color: $bright-blue;
-    box-shadow: none;
-  }
+body {
+  font: normal 85.5%/1.4em $default-family;
 }
+
+
 
 // ######################
 // By default devel var dumps have a high z-index, this lowers it.

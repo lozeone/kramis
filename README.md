@@ -3,16 +3,16 @@ Drupal 8/9 Admin Theme. (sub theme of seven)
 
 #Introduction
 -----------
-This is an administration theme for Drupal 8 that I have been using on most of my D8 sites.
+This is an administration theme for Drupal 8 that I have been using on most of my D9 sites.
 It's a subtheme of Seven and loosely based on the starter theme "lightship" https://github.com/devcollaborative/drupal8-devcollab-lightship
 
-It's basicaly just what I feel are some css improvements and a few alter hook implementations to get a nicer admin experience with some of the modules I commonly use.
+It's basically just what I feel are some css improvements and a few alter hook implementations to get a nicer admin experience with some of the modules I commonly use.
 
 It's rough and needs to be cleaned up a bit, but it works.
 
-To complie the css you need Gulp. run `gulp watch` from thhe kramis directory.
+To compile the css you need Gulp. run `gulp watch` from the kramis directory.
 
-running `npm install` should install all the needed node modules
+running `npm install` should install all the needed node_modules for gulp
 
 #Setting Up Gulp
 --------
