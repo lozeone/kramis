@@ -1,41 +1,28 @@
-# kramis
-Drupal 8/9 Admin Theme. (sub theme of seven)
+# Kramis (Administration Theme)
+Drupal 8 and 9 Admin Theme. (sub theme of seven)
 
-#Introduction
------------
-This is an administration theme for Drupal 8 that I have been using on most of my D9 sites.
+Introduction
+------------
+This is an administration theme for Drupal 9 that I have been using on most of my drupal 9 sites.
 It's a subtheme of Seven and loosely based on the starter theme "lightship" https://github.com/devcollaborative/drupal8-devcollab-lightship
 
 It's basically just what I feel are some css improvements and a few alter hook implementations to get a nicer admin experience with some of the modules I commonly use.
 
-It's rough and needs to be cleaned up a bit, but it works.
+It's rough around the edges and needs to be cleaned up a bit, but it works well for my cases.
 
-To compile the css you need Gulp. run `gulp watch` from the kramis directory.
+If you are editing the sass:
+- `npm install` will install all the needed node_modules for comiling the css
+- `gulp watch` will watch the sass folder and compile the css when the scss files are changed.
 
-running `npm install` should install all the needed node_modules for gulp
 
-#Setting Up Gulp
+Gulp Tasks
 --------
 
-Steps detailed here: https://css-tricks.com/gulp-for-beginners/
-
-  1. Initialize Node Package Manager - npm init
-  This will generate a package-lock.json file, which *should* be committed in Git.
-
-  2. If you have Gulp installed globally (see the CSS Tricks link above for instructions), then save it locally to this project with:
-  npm install gulp --save-dev
-
-  3. Type npm i to have npm install the dependencies for the project per package.json. You should be ready to compile now!
-
-
-#Gulp Tasks
---------
+`gulp watch` - watches sass directories for changes and recompiles whenever you save a change
 
 `gulp sass` - compiles sass into CSS
 
 `gulp clean:css` - deletes compiled CSS
-
-`gulp watch` - watches sass directories for changes and recompiles whenever you save a change
 
 `gulp build` - simple one time build task
 
