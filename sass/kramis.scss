@@ -103,6 +103,10 @@ h1,
   }
 }
 
+.tiny-thumbnail img {
+  max-width: 90px;
+}
+
 table {
   font-size: 0.95em;
 
@@ -119,10 +123,10 @@ table {
 
 a.tabledrag-handle .handle {
   width: 30px;
-  height: auto;
-  margin: 0;
-  padding: 6px;
-  float: left;
+  height: 30px;
+  margin: -5px 0 0 0;
+  padding: 0;
+  //float: left;
   background-position: top center;
 }
 
@@ -323,9 +327,21 @@ fieldset.ief-form-bottom {
 
 @media screen and (min-width: 780px),
 (min-device-height: 780px) and (orientation: landscape) {
-  .layout-region-node-main,
-  .layout-region-node-footer {
+  .layout-region-node-main {
     padding-right: 4em; //max-width: 900px;
+  }
+  .layout-region-node-main {
+    .inner {
+      display: block;
+      width: 100%;
+      max-width: 950px;
+      margin: auto;
+      float: none;
+    }
+  }
+  .layout-node-form {
+    max-width: 2000px;
+    margin: auto;
   }
 }
 
@@ -477,6 +493,14 @@ div.description,
   }
 }
 
+.field--name-html-body {
+  iframe {
+    position: relative !important;
+    max-width: 900px;
+    margin: auto;
+    display: block;
+  }
+}
 
 // ##############################################
 // Responsive styles: These need to go last so they can
