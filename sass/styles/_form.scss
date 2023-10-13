@@ -12,12 +12,14 @@ input.form-date,
 input.form-time,
 textarea.form-textarea {
   padding: 0.7em 1em;
-  &:focus{
+
+  &:focus {
     background-color: $pale-blue;
     border-color: $bright-blue;
     box-shadow: none;
   }
 }
+
 .view-filters {
   padding: 1em 1.5em;
   margin-bottom: 2em;
@@ -25,23 +27,28 @@ textarea.form-textarea {
   background-color: #fcfcfc;
   border: solid 1px $light-gray;
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+
   label {
     font-size: 12px;
     font-weight: normal;
     text-transform: uppercase;
   }
+
   .form--inline {
     display: flex;
     flex-wrap: wrap;
   }
+
   #edit-actions,
   .form-actions {
     align-self: flex-end;
     margin: 0.75em 0;
     clear: none;
+
     input.button {
       font-size: 14px;
       line-height: 1.7em;
+
       &:first-child {
         @include gradient($dark-green, $green);
         color: #fff;
@@ -61,25 +68,28 @@ textarea.form-textarea {
     }
   }
 }
-.select2-container{
-  ul{
+
+.select2-container {
+  ul {
     margin: 0;
   }
 }
 
-.ief-achievement-preview{
+.ief-achievement-preview {
   font-weight: bold;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  img{
+
+  img {
     vertical-align: middle;
   }
 }
-.ief-entity-table{
-  tr.ief-row-entity.ief-row-entity-form{
+
+.ief-entity-table {
+  tr.ief-row-entity.ief-row-entity-form {
     display: none;
   }
 }
@@ -90,3 +100,9 @@ textarea.form-textarea {
   margin: auto;
 }*/
 
+.form-type-duration .duration-inner-wrapper .form-type--number,
+.form-type-duration .duration-inner-wrapper .form-type-number,
+.form-type--duration .duration-inner-wrapper .form-type--number,
+.form-type--duration .duration-inner-wrapper .form-type-number {
+  width:6em;
+}
