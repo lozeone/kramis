@@ -41,6 +41,12 @@ function _kramis_entity_form_col(&$form, &$form_state, $form_id) {
   }
 }
 
+
+function kramis_gutenberg_node_type_enabled($node){
+  $config = \Drupal::service('config.factory')->getEditable('gutenberg.settings');
+  return $config->get($node->bundle() . '_enable_full');
+}
+
 /**
  * Alters an entity edit form layout.
  *
@@ -153,8 +159,55 @@ function kramis_form_commerce_product_form_alter(&$form, &$form_state, $form_id)
  * Node entities.
  */
 function kramis_form_node_form_alter(&$form, &$form_state, $form_id) {
-  _kramis_entity_form_col($form, $form_state, $form_id);
-  _kramis_move_entity_form_fields($form, $form_state, $form_id);
+$node = $form_state->getFormObject()->getEntity();
+  if(!kramis_gutenberg_node_type_enabled($node)) {
+    //$node = $form_state->getFormObject()->getEntity();
+    //if($node->bundle() != 'contest') {
+    _kramis_entity_form_col($form, $form_state, $form_id);
+    _kramis_move_entity_form_fields($form, $form_state, $form_id);
+    //}
+
+
+    // articles not using gutenberg.
+    if($node->bundle() == 'article'){
+      $form['moderation_state']['#group'] = 'meta';
+
+      $form['revision_information']['#group'] = 'advanced';
+      $form['revision_information']['#type'] = 'details';
+      $form['revision_information']['#open'] = FALSE;
+      $form['revision_log']['#group'] = 'revision_information';
+
+      $form['field_publish_on']['#group'] = 'meta';
+
+      $form['comment']['widget'][0]['#weight'] = 300;
+    }
+  } else {
+    // Gurenberg sidebar.
+
+    // move published to meta box.
+    if (isset($form['status'])) {
+      $form['status']['#group'] = 'meta';
+      $form['status']['#weight'] = 1;
+    }
+
+    $form['moderation_state']['#group'] = 'meta';
+
+    $form['revision_information']['#group'] = 'advanced';
+    $form['revision_information']['#type'] = 'details';
+    $form['revision_information']['#open'] = FALSE;
+    $form['revision_log']['#group'] = 'revision_information';
+
+
+    $form['field_publish_on']['#group'] = 'meta';
+
+    $form['comment']['widget'][0]['#weight'] = 300;
+    // Use the formatted name in the author meta.
+    if (isset($form['meta']['author']['#markup'])) {
+      $entity = $form_state->getFormObject()->getEntity();
+      $form['meta']['author']['#markup'] = $entity->getOwner()->getDisplayName();
+    }
+
+  }
 }
 
 /**

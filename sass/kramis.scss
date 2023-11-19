@@ -18,6 +18,8 @@
 //@import "styles/admin";
 //@import "styles/layout";
 
+@import "styles/gutenberg-layout";
+
 // styles
 @import "styles/form";
 @import "styles/pager";
@@ -29,6 +31,8 @@
 @import "styles/throbbers";
 //@import "styles/comments";
 @import "styles/ckeditor";
+@import "styles/media-library";
+
 
 // Component Styles
 @import "styles/regions/header";
@@ -88,7 +92,7 @@ h1,
 }
 
 .button {
-  border-radius: 5px;
+  //border-radius: 5px;
   padding: 0.5em 1.5em;
   font-size: 0.755rem;
 }
@@ -296,27 +300,6 @@ fieldset.ief-form-bottom {
   }
 }
 
-.media__media_library {
-  position: relative;
-  background-color: $off-white;
-
-  .field--name-thumbnail {
-    background-color: $off-white;
-  }
-}
-
-.media-library-item__attributes {
-  max-width: 100%;
-  border-top: solid 1px $light-gray;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.media-library-widget-modal,
-.media-library-selection {
-  .media-library-item--grid {
-    //min-width: 180px;
-  }
-}
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select {

@@ -112,3 +112,32 @@ textarea.form-textarea {
     min-width: 90px;
   }
 }
+
+.entity-meta__header{
+  .field--name-moderation-state{
+    margin: 0;
+    padding: 0 !important;
+  }
+  .field--name-field-publish-on{
+    margin: 0;
+    padding: 0;
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+    legend{
+      //display: none;
+      letter-spacing: normal;
+      text-transform: none;
+      display: block;
+      margin: 0.15rem 0;
+      position: relative;
+      span{
+        display: block;
+      }
+    }
+  }
+}
+
+
