@@ -130,8 +130,8 @@ function kramis_form_message_form_alter(&$form, &$form_state, $form_id) {
  * Product License entities.
  */
 function kramis_form_product_license_form_alter(&$form, &$form_state, $form_id) {
-  _kramis_entity_form_col($form, $form_state, $form_id);
-  _kramis_move_entity_form_fields($form, $form_state, $form_id);
+  //_kramis_entity_form_col($form, $form_state, $form_id);
+  //_kramis_move_entity_form_fields($form, $form_state, $form_id);
 }
 
 /**
