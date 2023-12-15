@@ -486,6 +486,10 @@ div.description,
   }
 }
 
+.ui-autocomplete.ui-widget-content .ui-state-active{
+  color: #fff;
+}
+
 // ##############################################
 // Responsive styles: These need to go last so they can
 // override the above styles
