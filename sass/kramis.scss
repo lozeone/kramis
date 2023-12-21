@@ -124,14 +124,14 @@ table {
 a.tabledrag-handle .handle {
   width: 30px;
   height: 30px;
-  margin: -5px 0 0 0;
+  margin: 0; //-5px 0 0 0;
   padding: 0;
   //float: left;
-  background-position: top center;
+  background-position: center;
 }
 
 .draggable a.tabledrag-handle {
-  margin-left: 0
+  //margin-left: 0
 }
 
 @media (min-width: $desktop) {
