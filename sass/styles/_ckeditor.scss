@@ -11,3 +11,11 @@
     }
   }
 }
+
+
+.ck .drupal-media [data-drupal-media-preview] {
+  pointer-events: none;
+}
+.drupal-media{
+  width: 100%;
+}

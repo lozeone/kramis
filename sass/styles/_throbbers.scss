@@ -63,7 +63,7 @@ $throbber_background_color: rgba(0, 0, 0, 0.85);
 
 .ajax-progress-fullscreen {
   position: fixed;
-  z-index: 9000;
+  z-index: 90000000;
   top: 0;
   /* Can't do center:50% middle: 50%, so approximate it for a typical window size. */
   left: 0;

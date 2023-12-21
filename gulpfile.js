@@ -13,7 +13,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 // Run a list of tasks in order
 const runSequence = require('run-sequence');
-
+const autoprefixer = require('gulp-autoprefixer');
 // Used to set whether CSS format is compressed or expanded when compiled.
 const plumber = require('gulp-plumber');
 // Used to catch errors and continue build
@@ -26,7 +26,8 @@ gulp.task('sass', () => gulp.src('sass/**/*.scss')
   }))
   .pipe(sourcemaps.init())
   .pipe(sass({ outputStyle: style })) // Converts Sass to CSS with gulp-sass.
-  // .pipe(sourcemaps.write())
+  .pipe(autoprefixer())
+  .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('css')));
 
 gulp.task('clean:css', (cb) => {

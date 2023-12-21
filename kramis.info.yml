@@ -5,7 +5,7 @@ package: ILG
 core_version_requirement: ^8 || ^9 || ^10
 libraries:
   - kramis/global-styling
-  - kramis/fonts
+#  - kramis/fonts
 
 base theme: seven
 
