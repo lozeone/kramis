@@ -10,3 +10,9 @@ fonts:
   css:
     theme:
       'https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap': { type: external }
+
+
+media_library:
+  css:
+    theme:
+      css/media-library.css: { weight: 100 }

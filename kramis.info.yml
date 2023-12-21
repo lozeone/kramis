@@ -22,3 +22,10 @@ regions:
   footer: Footer
 regions_hidden:
   - sidebar_first
+
+
+libraries-extend:
+  media_library/view:
+    - kramis/media_library
+  media_library/widget:
+    - kramis/media_library
