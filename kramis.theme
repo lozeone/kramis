@@ -257,8 +257,8 @@ function kramis_form_taxonomy_term_form_alter(&$form, &$form_state, $form_id) {
  * Media entities.
  */
 function kramis_form_media_form_alter(&$form, &$form_state, $form_id) {
-  _kramis_entity_form_col($form, $form_state, $form_id);
-  _kramis_move_entity_form_fields($form, $form_state, $form_id);
+ // _kramis_entity_form_col($form, $form_state, $form_id);
+ // _kramis_move_entity_form_fields($form, $form_state, $form_id);
 }
 
 /**
