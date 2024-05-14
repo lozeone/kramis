@@ -1,6 +1,6 @@
 {
     "name": "drupal/kramis",
-    "description": "Kramis admin theme for drupal 9.",
+    "description": "Kramis admin theme for drupal 9 & 10.",
     "type": "drupal-theme",
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/lozeone/kramis",
@@ -16,6 +16,6 @@
     ],
     "require": {
         "php": "^7.4 || ^8",
-        "drupal/core": "^8 || ^9"
+        "drupal/core": "^9 || ^10"
     }
 }
